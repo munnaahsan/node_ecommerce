@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const packageName = require('./models/User');
+const User = require('./models/User');
 
 require('./utils/db.config'); 
 const app = express()
@@ -17,10 +17,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/register', (req, res) => {
-  return res.render('register')
+  return res.render('register', {message: null})
 })
-app.post('/register', (req,res) => {
-  return res.send(req.body)
+app.post('/register', async (req,res) => {
+  const user = new User(req.body);
+  await user.save()
+  return res.render('register', {message: "Registration Successfully"});
+
 })
 app.listen(3000, () => {
   console.log('Server Runnning on Port 30000')

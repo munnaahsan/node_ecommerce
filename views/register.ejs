@@ -5,7 +5,14 @@
 <body>
   <%- include('includes/nav'); %> 
   <div class="container mt-5">
-    <h1>Registration</h1>
+    <h2>Registration Page</h2>     
+    
+    <% if (message) { %>
+    <div class="alert alert-success" role="alert">
+      <%= message %>
+    </div>
+    <% } %>
+
   <form method="POST" action="/register">
     <div class="mb-3">
       <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
@@ -17,10 +24,10 @@
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password<sup class="text-danger">*</sup></label>
-      <input type="password" class="form-control" id="password" name="password">
+      <input type="password" class="form-control" id="password" name="password" value="3434">
     </div>
     <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" name="checkbox" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
