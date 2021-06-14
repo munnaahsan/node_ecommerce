@@ -8,14 +8,14 @@ const registerSchema = Joi.object({
            .required(),
 
   password: Joi.string()
-    .required(),
+               .required(),
 
   repeat_password: Joi.ref('password'),
 
   email: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net','in'] } } )
+            .trim()
+            .lowercase()
+            .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net','in'] } } )
 
  
 })

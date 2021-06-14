@@ -10,7 +10,7 @@
     "lint:fix": "eslint --fix ./*.js"
   },
   "keywords": [
-    "ecommerce"
+    "Node Mongo"
   ],
   "author": "Munna",
   "license": "ISC",
